@@ -3,9 +3,9 @@ AWS Policy to allow restricted access
 #
 #
 #
-* Parameter Group Name: PG-NAMEPREFIX*
+* Parameter Group Name: *
 * Snapshot Name: SN-NAMEPREFIX*
-* Options Group Name: OG-NAMEPREFIX*
+* Options Group Name: *
 * Security Group Name: SG-NAMEPREFIX*
 * Reserved Instance Name: RI-NAMEPREFIX*
 * Event Subscription Name: ES-NAMEPREFIX*
