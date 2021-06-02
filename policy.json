@@ -1,0 +1,131 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RDSAccessResourcesWithARNDBname",
+            "Effect": "Allow",
+            "Action": [
+                "rds:DescribeDBInstanceAutomatedBackups",
+                "rds:RestoreDBInstanceFromS3",
+                "rds:DescribePendingMaintenanceActions",
+                "rds:StopDBInstanceAutomatedBackupsReplication",
+                "rds:AddRoleToDBInstance",
+                "rds:CreateDBInstance",
+                "rds:DownloadDBLogFilePortion",
+                "rds:DescribeDBInstances",
+                "rds:ModifyDBInstance",
+                "rds:DeleteDBInstance",
+                "rds:AddTagsToResource",
+                "rds:StartDBInstanceAutomatedBackupsReplication",
+                "rds:DescribeDBSnapshots",
+                "rds:DescribeDBLogFiles",
+                "rds:StopDBInstance",
+                "rds:PromoteReadReplica",
+                "rds:StartDBInstance",
+                "rds:ListTagsForResource",
+                "rds:CreateDBSnapshot",
+                "rds:DescribeValidDBInstanceModifications",
+                "rds:RestoreDBInstanceFromDBSnapshot",
+                "rds:RebootDBInstance",
+                "rds:ApplyPendingMaintenanceAction",
+                "rds:CreateDBInstanceReadReplica",
+                "rds:RemoveTagsFromResource",
+                "rds:RestoreDBInstanceToPointInTime",
+                "rds:RemoveRoleFromDBInstance"
+            ],
+            "Resource": [
+                "arn:aws:rds:REGION:ACCOUNTNO:pg:PG-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:snapshot:SN-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:og:OG-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:secgrp:SG-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:ri:RI-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:es:ES-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:subgrp:SU-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:db:DB-NAMEPREFIX*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "rds:DatabaseName": "DB-NAMEPREFIX*"
+                }
+            }
+        },
+        {
+            "Sid": "RDSAccessResourcesWithARN",
+            "Effect": "Allow",
+            "Action": [
+                "rds:AuthorizeDBSecurityGroupIngress",
+                "rds:CreateEventSubscription",
+                "rds:ModifyOptionGroup",
+                "rds:DescribeDBSubnetGroups",
+                "rds:ResetDBParameterGroup",
+                "rds:DescribeDBParameterGroups",
+                "rds:CreateOptionGroup",
+                "rds:CreateDBSubnetGroup",
+                "rds:PurchaseReservedDBInstancesOffering",
+                "rds:DeleteOptionGroup",
+                "rds:ModifyDBParameterGroup",
+                "rds:DeleteEventSubscription",
+                "rds:RemoveSourceIdentifierFromSubscription",
+                "rds:AddSourceIdentifierToSubscription",
+                "rds:CopyDBParameterGroup",
+                "rds:RevokeDBSecurityGroupIngress",
+                "rds:DescribeDBParameters",
+                "rds:CreateDBParameterGroup",
+                "rds:DescribeEventSubscriptions",
+                "rds:CopyDBSnapshot",
+                "rds:ModifyEventSubscription",
+                "rds:DeleteDBSnapshot",
+                "rds:DescribeDBSecurityGroups",
+                "rds:CopyOptionGroup",
+                "rds:DescribeDBSnapshotAttributes",
+                "rds:ModifyDBSnapshot",
+                "rds:DeleteDBSubnetGroup",
+                "rds:DescribeReservedDBInstances",
+                "rds:CreateDBSecurityGroup",
+                "rds:DeleteDBSecurityGroup",
+                "rds:DescribeOptionGroupOptions",
+                "rds:DeleteDBParameterGroup",
+                "rds:ModifyDBSnapshotAttribute",
+                "rds:DescribeOptionGroups",
+                "rds:ModifyDBSubnetGroup"
+            ],
+            "Resource": [
+                "arn:aws:rds:REGION:ACCOUNTNO:snapshot:SN-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:secgrp:SG-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:og:OG-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:subgrp:SU-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:ri:RI-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:pg:PG-NAMEPREFIX*",
+                "arn:aws:rds:REGION:ACCOUNTNO:es:ES-NAMEPREFIX*"
+            ]
+        },
+        {
+            "Sid": "RDSAccessResourcesWithoutARN",
+            "Effect": "Allow",
+            "Action": [
+                "rds:DeleteInstallationMedia",
+                "rds:CancelExportTask",
+                "rds:CreateCustomAvailabilityZone",
+                "rds:DescribeDBEngineVersions",
+                "rds:CrossRegionCommunication",
+                "rds:DescribeExportTasks",
+                "rds:StartExportTask",
+                "rds:DescribeEngineDefaultParameters",
+                "rds:DeleteDBInstanceAutomatedBackup",
+                "rds:DescribeCustomAvailabilityZones",
+                "rds:DescribeReservedDBInstancesOfferings",
+                "rds:DeleteCustomAvailabilityZone",
+                "rds:ModifyCertificates",
+                "rds:ImportInstallationMedia",
+                "rds:DescribeOrderableDBInstanceOptions",
+                "rds:DescribeSourceRegions",
+                "rds:DescribeInstallationMedia",
+                "rds:DescribeCertificates",
+                "rds:DescribeEventCategories",
+                "rds:DescribeAccountAttributes",
+                "rds:DescribeEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
